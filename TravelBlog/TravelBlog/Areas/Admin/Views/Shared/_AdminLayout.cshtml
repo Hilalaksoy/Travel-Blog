@@ -1,0 +1,245 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>Admin Paneli</title>
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="Mannatthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <link rel="shortcut icon" href="~/Content/Admin/assets/images/favicon.ico">
+
+    <!-- Alertify css -->
+    <link href="~/Content/Admin/assets/plugins/alertify/css/alertify.css" rel="stylesheet" type="text/css">
+
+    <link href="~/Content/Admin/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/Admin/assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/Admin/assets/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body class="fixed-left">
+    <!-- Loader -->
+    <div id="preloader"><div id="status"><div class="spinner"></div></div></div>
+    <!-- Begin page -->
+    <div id="wrapper">
+        <!-- ========== Left Sidebar Start ========== -->
+        <div class="left side-menu">
+            <button type="button" class="button-menu-mobile button-menu-mobile-topbar open-left waves-effect">
+                <i class="ion-close"></i>
+            </button>
+            <!-- LOGO -->
+            <div class="topbar-left">
+                <div class="text-center">
+                    <!--<a href="index.html" class="logo"><i class="mdi mdi-assistant"></i> Epoch</a>-->
+                    <a href="index.html" class="logo" style="text-align:center;">
+                        @*Admin logosu*@
+                        <img src="~/Content/img/logooooo.JPG" alt="" class="logo-large">
+                    </a>
+                </div>
+            </div>
+
+            <div class="sidebar-inner slimscrollleft">
+
+                <div id="sidebar-menu">
+                    <ul>
+                        @*<li class="menu-title">Main</li>*@
+
+                            @*<li>
+                                <a href="/Admin/Index/Index" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span>Cihat <span class="badge badge-pill badge-primary float-right">7</span></span>
+                                </a>
+                            </li>*@
+
+                            @*<li>
+                                <a href="/Panel/MainCategory" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
+                                    <span> Ana Kategoriler</span>
+                                </a>
+                            </li>*@
+
+
+                        @*<li class="has_sub">
+                                 <a href="#" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Ana Kategoriler </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                                 <ul class="list-unstyled">
+                                     <li><a href="advanced-highlight.html">Highlight</a></li>
+                                     <li><a href="advanced-rating.html">Rating</a></li>
+                                     <li><a href="advanced-alertify.html">Alertify</a></li>
+                                     <li><a href="advanced-rangeslider.html">Range Slider</a></li>
+                                </ul>
+                            </li>*@
+
+                        @*<li>
+                                <a href="/Panel/SubCategory" class="waves-effect"><i class="mdi mdi-calendar-clock"></i><span> Alt Kategoriler </span></a>
+                            </li>*@
+
+                        <li class="menu-title">Admin Paneli</li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-bullseye"></i> <span> Üyeler </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="http://localhost:49677/Admin/Moderator/Moderator">Moderatörler</a></li>
+                                <li><a href="http://localhost:49677/Admin/Users/Users">Kullanıcılar</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i><span>Mekanlar</span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="http://localhost:49677/Admin/Photos/Photos">Fotoğraflar</a></li>
+                                <li><a href="http://localhost:49677/Admin/Articles/Articles">Yazılar</a></li>
+                                <li><a href="http://localhost:49677/Admin/Comments/Comments">Yorumlar</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-gauge"></i><span> Ana Sayfa </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
+                            <ul class="list-unstyled">
+                                <li><a href="http://localhost:49677/Admin/Welcome/Welcome">Karşılama Metni</a></li>
+                                <li><a href="http://localhost:49677/Admin/WelcomePhotos/WelcomePhotos">Karşılama Fotoğrafları</a></li>
+
+                            </ul>
+                        </li>
+
+
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div> <!-- end sidebarinner -->
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Start right Content here -->
+
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+
+                <!-- Top Bar Start -->
+                <div class="topbar">
+
+                    <nav class="navbar-custom">
+
+                        <ul class="list-inline float-right mb-0">                       
+                            <li class="list-inline-item dropdown notification-list hide-phone">
+                                <a class="nav-link dropdown-toggle arrow-none waves-effect text-white" data-toggle="dropdown" href="#" role="button"
+                                   aria-haspopup="false" aria-expanded="false">
+                                    <img src="~/Content/Admin/assets/images/flags/us_flag.jpg" class="ml-2" height="16" alt="" />
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right language-switch">
+
+                                    <a class="dropdown-item" href="#"><img src="~/Content/Admin/assets/images/flags/french_flag.jpg" alt="" height="16" /><span> French </span></a>
+
+                                </div>
+                            </li>
+                            
+                            <li class="list-inline-item dropdown notification-list">
+                                <a class="nav-link dropdown-toggle arrow-none waves-effect nav-user" data-toggle="dropdown" href="#" role="button"
+                                   aria-haspopup="false" aria-expanded="false">
+
+                                    @*Admin Fotoğrafı*@
+                                    <img src="~/Content/Admin/assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
+                                    <!-- item-->
+                                    <div class="dropdown-item noti-title">
+                                        <h5>Hoş Geldiniz...</h5>
+                                    </div>
+
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#"><i class="mdi mdi-logout m-r-5 text-muted"></i> Logout</a>
+                                </div>
+                            </li>
+
+                        </ul>
+
+                        <ul class="list-inline menu-left mb-0">
+                            <li class="float-left">
+                                <button class="button-menu-mobile open-left waves-light waves-effect">
+                                    <i class="mdi mdi-menu"></i>
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="clearfix"></div>
+
+                    </nav>
+
+                </div>
+                <!-- Top Bar End -->
+
+                <div class="page-content-wrapper ">
+
+                    <div class="container-fluid">
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="page-title-box">
+                                    <div class="btn-group float-right">
+                                        <ol class="breadcrumb hide-phone p-0 m-0">
+                                            <li class="breadcrumb-item"><a href="#">Travel Admin Panel</a></li>
+
+                                        </ol>
+                                    </div>
+                                    <h4 class="page-title">Admin</h4>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div id="content" class="animated fadeIn">
+                            @RenderBody()
+                        </div>
+
+                    </div><!-- container -->
+
+                </div> <!-- Page content Wrapper -->
+
+            </div> <!-- content -->
+
+            <footer class="footer">
+                © 2019 Travel Blog.
+            </footer>
+
+        </div>
+        <!-- End Right content here -->
+
+    </div>
+
+    <script>
+        function ModalKapat(id) {
+            $("#" + id + " > button").click();
+        }
+    </script>
+    <!-- END wrapper -->
+    <!-- jQuery  -->
+    <script src="~/Content/Admin/assets/js/jquery.min.js"></script>
+    <script src="~/Content/Admin/assets/js/popper.min.js"></script>
+    <script src="~/Content/Admin/assets/js/bootstrap.min.js"></script>
+    <script src="~/Content/Admin/assets/js/modernizr.min.js"></script>
+    <script src="~/Content/Admin/assets/js/detect.js"></script>
+    <script src="~/Content/Admin/assets/js/fastclick.js"></script>
+    <script src="~/Content/Admin/assets/js/jquery.slimscroll.js"></script>
+    <script src="~/Content/Admin/assets/js/jquery.blockUI.js"></script>
+    <script src="~/Content/Admin/assets/js/waves.js"></script>
+    <script src="~/Content/Admin/assets/js/jquery.nicescroll.js"></script>
+    <script src="~/Content/Admin/assets/js/jquery.scrollTo.min.js"></script>
+
+    <!-- Alertify js -->
+    <script src="~/Content/Admin/assets/plugins/alertify/js/alertify.js"></script>
+    <script src="~/Content/Admin/assets/pages/alertify-init.js"></script>
+
+    <!-- App js -->
+    <script src="~/Content/Admin/assets/js/app.js"></script>
+
+    <script src="~/Content/Admin/js/Panel/Helper.js"></script>
+
+    <div class="alertify-logs"></div>
+</body>
+
+<!-- Mirrored from mannatthemes.com/epoch/vertical/advanced-alertify.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Mar 2019 11:24:59 GMT -->
+</html>
