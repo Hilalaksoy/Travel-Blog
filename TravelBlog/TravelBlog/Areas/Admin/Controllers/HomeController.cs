@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace TravelBlog.Areas.Admin.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class HomeController : Controller
     {
         // GET: Admin/Home
