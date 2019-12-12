@@ -540,6 +540,7 @@
     <Content Include="Content\Admin\assets\plugins\summernote\font\summernote291f.woff" />
     <Content Include="Content\Admin\assets\plugins\summernote\font\summernoted41d.eot" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Post.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

@@ -14,5 +14,12 @@ namespace TravelBlog.Areas.Admin.Controllers
         {
             return View();
         }
+
+        //Blog yazıları
+        //GET: Admin/Home/Post
+        public ActionResult Post()
+        {
+            return View();
+        }
     }
 }

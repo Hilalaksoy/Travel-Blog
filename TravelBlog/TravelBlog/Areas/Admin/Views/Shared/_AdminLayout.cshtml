@@ -15,7 +15,7 @@
     <!-- Alertify css -->
     <link href="~/Content/Admin/assets/plugins/alertify/css/alertify.css" rel="stylesheet" type="text/css">
 
-    <link href="~/Content/Admin/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/Admin/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/Content/Admin/assets/css/icons.css" rel="stylesheet" type="text/css">
     <link href="~/Content/Admin/assets/css/style.css" rel="stylesheet" type="text/css">
 </head>
@@ -46,36 +46,7 @@
 
                 <div id="sidebar-menu">
                     <ul>
-                        @*<li class="menu-title">Main</li>*@
-
-                            @*<li>
-                                <a href="/Admin/Index/Index" class="waves-effect">
-                                    <i class="mdi mdi-airplay"></i>
-                                    <span>Cihat <span class="badge badge-pill badge-primary float-right">7</span></span>
-                                </a>
-                            </li>*@
-
-                            @*<li>
-                                <a href="/Panel/MainCategory" class="waves-effect">
-                                    <i class="mdi mdi-airplay"></i>
-                                    <span> Ana Kategoriler</span>
-                                </a>
-                            </li>*@
-
-
-                        @*<li class="has_sub">
-                                 <a href="#" class="waves-effect"><i class="mdi mdi-layers"></i> <span> Ana Kategoriler </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
-                                 <ul class="list-unstyled">
-                                     <li><a href="advanced-highlight.html">Highlight</a></li>
-                                     <li><a href="advanced-rating.html">Rating</a></li>
-                                     <li><a href="advanced-alertify.html">Alertify</a></li>
-                                     <li><a href="advanced-rangeslider.html">Range Slider</a></li>
-                                </ul>
-                            </li>*@
-
-                        @*<li>
-                                <a href="/Panel/SubCategory" class="waves-effect"><i class="mdi mdi-calendar-clock"></i><span> Alt Kategoriler </span></a>
-                            </li>*@
+                      
 
                         <li class="menu-title">Admin Paneli</li>
 
@@ -92,7 +63,9 @@
                             <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i><span>Mekanlar</span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
                                 <li><a href="http://localhost:49677/Admin/Photos/Photos">Fotoğraflar</a></li>
-                                <li><a href="http://localhost:49677/Admin/Articles/Articles">Yazılar</a></li>
+                                <li>
+                                    @Html.ActionLink("Yazılar", "Post", "Home");
+                                </li>
                                 <li><a href="http://localhost:49677/Admin/Comments/Comments">Yorumlar</a></li>
 
                             </ul>
