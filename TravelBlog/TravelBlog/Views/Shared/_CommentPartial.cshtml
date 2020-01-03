@@ -1,0 +1,88 @@
+﻿@using Microsoft.AspNet.Identity
+@model TravelBlog.Models.Place
+
+<style>
+    #isLike {
+        display: block;
+        padding: 5px 10px;
+        margin: 5px 0;
+        font: 14px/20px Arial, sans-serif;
+        background-color: #ccc;
+        border-radius: 7px;
+    }
+
+        #isLike:hover {
+            background-color: lightgreen;
+            cursor: pointer;
+        }
+
+    .isSelected {
+        background-color: lightgreen;
+    }
+</style>
+
+@if (Request.IsAuthenticated)
+{
+    <div class="form-comments">
+        <div class="title-box-d">
+            <h3 class="title-d"> Yorum Yap</h3>
+        </div>
+        @using (Html.BeginForm("PlaceDetail", "Home", new { id = Model.Id }, FormMethod.Post, new { @class = "form-a" }))
+        {
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="col-md-5">
+                        <div class="form-group">
+                            <label id="isLike">
+                                Beğendiniz mi?
+                                @Html.CheckBox("IsLike", new { htmlAttributes = new { @class = "form-control" } })
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputName">Kullanıcı Adı</label>
+                        <input type="text" class="form-control form-control-lg form-control-a" name="UserName" placeholder="Kullanıcı Adı *"
+                               required>
+                    </div>
+                </div>
+
+                <div class="col-md-12 mb-3">
+                    <div class="form-group">
+                        <label for="textMessage">Yorum</label>
+                        <textarea id="textMessage" class="form-control" placeholder="Yorum *" name="CommentText" cols="45"
+                                  rows="8" required></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-a">Ekle</button>
+                </div>
+            </div>
+
+        }
+
+    </div>
+
+}
+else
+{
+    <div class="col-md-12 mb-3">
+        <h3>Yorum eklemek için üye olmanız gerekmektedir.</h3>
+    </div>
+}
+<br />
+@if (TempData["CommentMessage"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        @TempData["CommentMessage"]
+    </div>
+}
+
+@if (TempData["ErrorCommentMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["ErrorCommentMessage"]
+    </div>
+}
+

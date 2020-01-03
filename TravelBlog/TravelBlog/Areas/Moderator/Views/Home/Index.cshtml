@@ -1,0 +1,46 @@
+﻿@model  IList<TravelBlog.Models.Place>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Moderatör</title>
+    <link href="~/Content/Admin/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Admin/assets/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/Admin/assets/css/style.css" rel="stylesheet" type="text/css">
+    <script src="~/Content/Admin/assets/js/jquery.min.js"></script>
+    <script src="~/Content/Admin/assets/js/popper.min.js"></script>
+    <script src="~/Content/Admin/assets/js/bootstrap.min.js"></script>
+    <script src="~/Content/Admin/assets/js/modernizr.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row" style="margin-top:20px;">
+            <div class="jumbotron form-control">
+                <h1 class="display-4" style="color:darkcyan;">Moderator Paneline Hoşgeldiniz</h1>
+                <p class="lead">Moderator panelinde Blog yazılarının yorumlarını görüntüleyip yorumları onaylayabilirsiniz.</p>
+                <hr class="my-4">
+            </div>
+            <br />
+        </div>
+        <h4>Yorumlarını yönetmek istediğiniz blog yazısını seçiniz..</h4>
+        <br />
+        <div class="row">            
+            <ul>
+                @foreach (var item in Model)
+                {
+                    <li class="list-group-item">
+                        @Html.ActionLink(item.PlaceName, "CommentConfirm", "Home", new { id = item.Id }, new {@class="form-control", @style = "color:darkcyan;font-size:14px;font-weight:bold;" })
+                    </li>
+                }
+
+            </ul>
+
+        </div>
+    </div>
+</body>
+</html>

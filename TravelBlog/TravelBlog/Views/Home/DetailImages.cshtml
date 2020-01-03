@@ -1,0 +1,43 @@
+﻿@model  TravelBlog.Models.Place
+@{
+    ViewBag.Title = Model.PlaceName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<title>@ViewBag.Title</title>
+<section class="intro-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-lg-8">
+                <div class="title-single-box">
+                    <h1 class="title-single">@Model.PlaceName Yazısının Resimleri</h1>
+
+                </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top:50px;">
+
+            @if (Model.Medias.Count() == 1)
+            {
+                <span style="margin-left:20px;">Bu blog yazısına ait başka resim bulunmamaktadır.</span>
+            }
+            else
+            {
+                foreach (var item in Model.Medias)
+                {
+                    <div class="col-md-3" style="margin-right:30px;">
+                        <div class="card" style="width: 18rem;">
+                            <img src="@Url.Content(item.ImagePath)" class="card-img-top popup" alt="...">                            
+                           
+                        </div>
+                    </div>
+                }
+            }
+            <div class="col-md-12 col-lg-8" style="margin-bottom:20px; margin-top:20px;">
+                @Html.ActionLink("Geri dön", "PlaceDetail", "Home", new { id = Model.Id }, new { @style = "color:#2eca6a; font-size:18pt;" })
+
+            </div>
+        </div>
+    </div>
+</section>
+

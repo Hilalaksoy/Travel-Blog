@@ -1,0 +1,44 @@
+﻿@model TravelBlog.Models.Place
+@{
+    /**/
+
+    ViewBag.Title = "DisplayImages";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>@Model.PlaceName Yazısının Resimleri</h2>
+
+
+<div class="row" style="margin-top:30px;">
+
+    @if (Model.Medias.Count() == 0)
+    {
+        <span style="margin-left:20px;">Bu blog yazısına ait resim bulunmamaktadır.</span>
+    }
+    else
+    {
+        foreach (var item in Model.Medias)
+        {
+            <div class="col-md-3" style="margin-right:30px;">
+                <div class="card" style="width: 18rem;">
+                    <img src="@Url.Content(item.ImagePath)" class="card-img-top" alt="...">
+                    <div class="card-body" style="text-align:right;">                       
+                        @Html.ActionLink("Sil", "DeleteImage", new { id = item.Id }, new { @class = "card-link", @style= "color:#2eca6a;"})
+                    </div>
+                </div>
+            </div>
+        }
+    }
+</div>
+<br />
+<p>
+    @Html.ActionLink("Geri dön", "BlogPosts", "Home", new { @style = "color:#2eca6a;" })
+</p>
+
+@if (ViewBag.ErrorMessage != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @ViewBag.ErrorMessage
+    </div>
+}
+

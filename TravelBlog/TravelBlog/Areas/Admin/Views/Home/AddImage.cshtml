@@ -1,0 +1,52 @@
+﻿@model TravelBlog.Models.Place
+@{
+    ViewBag.Title = "AddImage";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("AddImage", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <h4>Resim Ekle</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-horizontal">
+        <div class="form-group">
+            @*<div class="col-md-10">
+                @Html.DropDownList("Geziler", null, "Lütfen Yazı Seçiniz", new { @id = "selId", @class = "form-control", @style = "max - width:600px;" })*@
+                @*@Html.DropDownListFor(m => m.Id,ViewBag.Geziler as SelectList, "Lütfen Blog Seçiniz..",
+                    new { @id = "selId" , @class = "form-control" , @style = "max-width: 600px;"})*@
+            @*</div>*@
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Medias.FirstOrDefault(x => x.Id == x.PlaceId).ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="file" name="ImageFile" required />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Resim Ekle" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+@*@section scripts{
+     <script>
+         jQuery(document).ready(function () {
+             $("#selId").change(function () {
+                 var id = $(this).find(":selected").val()                 
+                 $.ajax({
+                     url: "/Admin/Home/AddImage/",                    
+                     type: 'POST',
+                     success: function() {
+                        alert("Blog yazısına resim eklendi..")
+                     }
+                 });
+             });
+         });
+     </script>
+    
+    }*@

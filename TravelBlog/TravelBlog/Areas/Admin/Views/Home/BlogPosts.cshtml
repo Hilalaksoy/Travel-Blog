@@ -1,0 +1,67 @@
+﻿@model IEnumerable<TravelBlog.Models.Place>
+
+@{
+    ViewBag.Title = "BlogPosts";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Yazıları</h2>
+
+<table class="table table-bordered table-hover" style="text-align:center;">
+    <thead>
+        <tr>
+            <th>Gezi Görseli</th>
+            <th>Gezi Başlığı</th>
+            <th>Adres</th>
+            <th>Oluşturulma Tarihi</th>
+            <th>Detay</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>       
+        @foreach (var item in Model)
+        {
+        <tr>
+            @if (item.Medias.Count() == 0)
+            {
+                <td>
+                    <img src="#" alt="" class="img-thumbnail" style="height:150px;" />
+                </td>
+            }
+            else
+            {
+                <td>
+                    <img src="@Url.Content(item.Medias[0].ImagePath)" alt="" class="img-thumbnail" style="height:150px;" />
+                </td>
+            }
+                <td>
+                    @item.PlaceName
+                </td>
+            <td>
+                @item.Address
+            </td>
+            <td>
+                @item.CreatedDate.ToString("dd.MM.yyyy")
+            </td>
+            <td>
+                @Html.ActionLink("Yazı Detayı", "PostDetail", new { id = item.Id }, new { @class = "btn btn-primary form-control" })
+            </td>
+            <td>
+                <a href="@Url.Action("UpdatePost","Home",new { id = item.Id })" style="font-size:17pt;" class="btn btn-warning">
+                    <i class="fa fa-repeat"></i>
+                </a>
+            </td>
+            <td>
+                <a href="@Url.Action("DeletePost","Home",new { id = item.Id })" style="font-size:17pt;" class="btn btn-info">
+                    <i class="fa fa-trash"></i>
+                </a>
+            </td>
+        </tr>
+        }
+
+
+
+
+    </tbody>
+</table>
