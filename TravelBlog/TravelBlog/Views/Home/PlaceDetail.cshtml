@@ -125,6 +125,16 @@
                             <div class="box-comments">
                                 <ul class="list-comments">
                                     <li>
+                                        <div class="comment-avatar">
+                                            @if (item.ApplicationUser.ProfileImagePath == null)
+                                            {
+                                                <img src="~/Images/profileImages/no_image.jpg" alt="">
+                                            }
+                                            else
+                                            {
+                                                <img src="@Url.Content(item.ApplicationUser.ProfileImagePath)" alt="">
+                                            }
+                                        </div>
                                         <div class="comment-details">
                                             <h4 class="comment-author">@item.ApplicationUser.UserName</h4>
                                             <span>@item.CommentDate.ToString("dd.MM.yyyy")</span>

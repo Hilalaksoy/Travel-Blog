@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -152,6 +153,26 @@ namespace TravelBlog.Controllers
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = model.FirstName, Email = model.Email , RegisterDate = DateTime.Now , FirstName = model.FirstName , LastName = model.LastName};
+
+                //ProfileImage
+                if (model.ProfileImageFile == null)
+                {
+                    user.ProfileImagePath = null;
+                }
+                else
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(model.ProfileImageFile.FileName);
+
+                    string extension = Path.GetExtension(model.ProfileImageFile.FileName);
+
+                    fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+
+
+                    user.ProfileImagePath = "~/Images/profileImages/" + fileName;
+                    fileName = Path.Combine(Server.MapPath("~/Images/profileImages/"), fileName);
+                    model.ProfileImageFile.SaveAs(fileName);
+                }
+
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Web;
 
 namespace TravelBlog.Models
 {
@@ -64,6 +66,13 @@ namespace TravelBlog.Models
 
     public class RegisterViewModel
     {
+        [Display(Name = "Profil Resmi Yükle")]
+        public string ProfileImagePath { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase ProfileImageFile { get; set; }
+
+
         [StringLength(50)]
         [Display(Name = "Adı")]
         public string FirstName { get; set; }

@@ -498,6 +498,7 @@
     <Content Include="Images\imageResize\blogImage3193620873.jpg" />
     <Content Include="Images\imageResize\blogImage4195433676.jpg" />
     <Content Include="Images\imageResize\blogImage6193424062.jpg" />
+    <Content Include="Images\profileImages\no_image.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\lib\bootstrap\css\bootstrap.min.css.map" />

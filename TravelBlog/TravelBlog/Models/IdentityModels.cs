@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -31,6 +32,12 @@ namespace TravelBlog.Models
         [DisplayName("Kayıt Tarihi"), DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
         [Column(TypeName = "datetime2")]
         public System.DateTime RegisterDate { get; set; }
+
+        [DisplayName("Profil Resmi Yükle")]
+        public string ProfileImagePath { get; set; }
+
+        [NotMapped]
+        public HttpPostedFileBase ProfileImageFile { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
